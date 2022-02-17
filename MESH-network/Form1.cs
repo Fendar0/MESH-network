@@ -83,7 +83,6 @@ namespace MESH_network
                     }
                 }
             }
-            new Circle().buttonmouse = btmu;
             Pictures.Invalidate();
         }
 
@@ -114,11 +113,10 @@ namespace MESH_network
         {
             e.Graphics.FillRectangle(br, 0, 0, Pictures.Width, Pictures.Height);
             foreach (Figure fig in lst)
-                fig.draw(e.Graphics);
-
-            /*e.Graphics.FillRectangle(br, 0, 0, Pictures.Width, Pictures.Height);
-            foreach (Figure fig in lst)
-                fig.draw(e.Graphics);*/
+                fig.draw(e.Graphics, btmu);
+                        
+            foreach (Figure fig2 in lst)
+                fig2.drawTrans(e.Graphics, btmu);
         }
 
         public Form1()

@@ -21,12 +21,12 @@ namespace MESH_network
             return false;
         }
 
-        virtual public void draw(Graphics g)
+        virtual public void draw(Graphics g, string buttonmouse)
         {
 
         }
 
-        virtual public void drawTrans(Graphics circle)
+        virtual public void drawTrans(Graphics circle, string buttonmouse)
         {
 
         }
