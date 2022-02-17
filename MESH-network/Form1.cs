@@ -14,21 +14,21 @@ namespace MESH_network
     {
         int w = 50, h = 50;
         int old_x, old_y;
-        List<Figure> lst = new List<Figure>();
-        List<Figure> lst2 = new List<Figure>();
+        List<Circle> lst = new List<Circle>();
         SolidBrush br = new SolidBrush(Color.FromArgb(255, 255, 255));
         string btmu;
-
+        int value;
 
         private void bt_add_Click(object sender, EventArgs e)
         {
-            Figure fig = createFigure("Circle");
+            Circle fig = new Circle();
             if (fig == null) return;
             fig.pos_x = 100.0f;
             fig.pos_y = 100.0f;
             lst.Add(fig);
             Pictures.Invalidate();
-        }
+            Program.circle.Sizearray(lst.Count);
+        }        
 
         private void Pictures_MouseMove(object sender, MouseEventArgs e)
         {
@@ -37,7 +37,7 @@ namespace MESH_network
                 int dx = e.X - old_x;
                 int dy = e.Y - old_y;
 
-                foreach (Figure fig in lst)
+                foreach (Circle fig in lst)
                 {
                     if (fig.selected == false) continue;
                     fig.pos_x += dx;
@@ -51,15 +51,16 @@ namespace MESH_network
 
         private void Pictures_MouseDown(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Left)
+            Pictures.MouseWheel += new MouseEventHandler(Pictures_MouseWheel);
+            if (e.Button == MouseButtons.Left)
             {
                 btmu = "left";
-                foreach (Figure fig in lst)
+                foreach (Circle fig in lst)
                     fig.selected = false;
 
                 for (int i = lst.Count - 1; i >= 0; i--)
                 {
-                    Figure fig = lst[i];
+                    Circle fig = lst[i];
                     fig.selected |= fig.test(e.X, e.Y);
                     if (fig.selected == true)
                     {
@@ -70,18 +71,35 @@ namespace MESH_network
             else if(e.Button == MouseButtons.Right)
             {
                 btmu = "right";
-                foreach (Figure fig in lst)
+                foreach (Circle fig in lst)
                     fig.selected = false;
 
                 for (int i = lst.Count - 1; i >= 0; i--)
                 {
-                    Figure fig = lst[i];
+                    Circle fig = lst[i];
                     fig.selected |= fig.test(e.X, e.Y);
                     if (fig.selected == true)
                     {
                         break;
                     }
                 }
+            }                        
+
+            Pictures.Invalidate();
+        }
+
+        private void Pictures_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (e.Delta > 10)
+            {
+                value += 2;
+                btmu = "wheelup";
+            }
+            else if (e.Delta < 0)
+            {
+                if(value != 0)
+                value -= 2;
+                btmu = "wheeldown";
             }
             Pictures.Invalidate();
         }
@@ -112,26 +130,17 @@ namespace MESH_network
         private void Pictures_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.FillRectangle(br, 0, 0, Pictures.Width, Pictures.Height);
-            foreach (Figure fig in lst)
+            foreach (Circle fig in lst)
+            {
                 fig.draw(e.Graphics, btmu);
-                        
-            foreach (Figure fig2 in lst)
-                fig2.drawTrans(e.Graphics, btmu);
+                fig.drawTrans(e.Graphics, btmu, value);
+            }            
         }
 
         public Form1()
-        {
-            InitializeComponent();
-        }
-
-        Figure createFigure(string fig_type)
-        {
-            switch (fig_type)
-            {
-                case "Circle": return new Circle();
-            }
-            return null;
-        }
+        {            
+            InitializeComponent();            
+        }               
 
     }
 }

@@ -18,5 +18,6 @@ namespace MESH_network
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+        public static Circle circle { get; } = new Circle();
     }
 }
