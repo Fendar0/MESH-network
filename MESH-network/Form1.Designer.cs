@@ -101,6 +101,7 @@
             this.bt_load.TabIndex = 8;
             this.bt_load.Text = "Load map";
             this.bt_load.UseVisualStyleBackColor = true;
+            this.bt_load.Click += new System.EventHandler(this.bt_load_Click);
             // 
             // tb_name
             // 

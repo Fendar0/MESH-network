@@ -22,7 +22,12 @@ namespace MESH_network
         public float pos_x, pos_y;              //начальные координаты отрисовки узлов и кругов маршрутизации
         public bool selected;                   //выделение узла
         public float x0new, y0new, diametrnew;  //новые коориднаты и диаметр отрисовки узла маршрутизации
-        
+        public float dx, dy;
+        public int nextID;
+        public int IDTrunsmitter;
+        public int IDRecipient;
+
+
         public List<string> circles2 = new List<string>(2);
         List<Circle> circles = new List<Circle>();
         
@@ -52,8 +57,8 @@ namespace MESH_network
         /// <returns></returns>
         public bool test(float x, float y)
         {
-            float dx = x - pos_x;
-            float dy = y - pos_y;
+            dx = x - pos_x;
+            dy = y - pos_y;
 
             if (dx * dx + dy * dy <= radius_squared) return true;
             return false;
@@ -91,12 +96,12 @@ namespace MESH_network
         /// <param name="buttonmouse">Какая кнопка мыши была нажата</param>
         /// <param name="value">переменная скейлинга радиуса круга маршрутизации</param>
         public void drawTrans(Graphics circle, string buttonmouse, int value)
-        {
+        {            
             changedlocation(pos_x, pos_y, value, diametr_trunsmitter);
             Pen t = Pens.Black;
             switch (buttonmouse)
             {
-                case "left":                    
+                case "left":
                     if (selected == true)
                         circle.DrawEllipse(t = Pens.Black, x0new, y0new, diametrnew, diametrnew);
                     break;
@@ -126,7 +131,7 @@ namespace MESH_network
             circles2.Add(indexTrunsmitter.ToString() + " " + indexRecepient.ToString());
             for (int i = 0; i < circles.Count; i++)
             {
-                circles2.Add(circles[i].pos_x + " " + circles[i].pos_y + " " + circles[i].diametrnew + " " + circles[i].id + " " + circles[i].name + " " + circles[i].description + " " + circles[i].location);
+                circles2.Add(circles[i].pos_x + " " + circles[i].pos_y + " " + circles[i].diametrnew + " " + circles[i].radius + " " + circles[i].id + " " + circles[i].name + " " + circles[i].description + " " + circles[i].location);
             }                        
         }
 
@@ -155,5 +160,17 @@ namespace MESH_network
             diametr = radius * 2.0f;
             diametr_trunsmitter = radius * 4.0f;
         }
+
+        public void SetLoadMap(string s0, string s1, string s2, string s3, string s4, string s5, string s6, string s7)
+        {
+            pos_x = Convert.ToInt32(s0);
+            pos_y = Convert.ToInt32(s1);
+            diametrnew = Convert.ToInt32(s2);
+            radius = Convert.ToInt32(s3);
+            id = new Guid (s4);
+            name = s5;
+            description = s6;
+            location = s7;            
+        }        
     }
 }
