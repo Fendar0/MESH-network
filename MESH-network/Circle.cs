@@ -10,8 +10,9 @@ using System.Windows.Forms;
 namespace MESH_network
 {
     internal class Circle
-    {        
-        Guid id;                                //id узла
+    {
+        /*Guid id; */                               //id узла
+        public string id;
         public float radius;                    //радиус узла
         public float radius_squared;            //площадь узла
         public float diametr;                   //диаметр узла
@@ -27,7 +28,6 @@ namespace MESH_network
         public int IDTrunsmitter;
         public int IDRecipient;
 
-
         public List<string> circles2 = new List<string>(2);
         List<Circle> circles = new List<Circle>();
         
@@ -36,7 +36,7 @@ namespace MESH_network
         /// </summary>
         public Circle()
         {
-            id = Guid.NewGuid();
+            /*id = Guid.NewGuid();*/
             setRadius(25.0f);
         }
 
@@ -95,9 +95,9 @@ namespace MESH_network
         /// <param name="circle">переменная свйоства Graphics для отрисовки круга маршрутизации</param>
         /// <param name="buttonmouse">Какая кнопка мыши была нажата</param>
         /// <param name="value">переменная скейлинга радиуса круга маршрутизации</param>
-        public void drawTrans(Graphics circle, string buttonmouse, int value)
-        {            
-            changedlocation(pos_x, pos_y, value, diametr_trunsmitter);
+        public void drawTrans(Graphics circle, string buttonmouse, float pos_x, float pos_y, float diametr_trunsmitter)
+        {
+            changedlocation(pos_x, pos_y, diametr_trunsmitter);
             Pen t = Pens.Black;
             switch (buttonmouse)
             {
@@ -105,17 +105,18 @@ namespace MESH_network
                     if (selected == true)
                         circle.DrawEllipse(t = Pens.Black, x0new, y0new, diametrnew, diametrnew);
                     break;
-                case "right":                    
+                case "right":
                     break;
-                case "wheelup":                    
+                case "wheelup":
                     if (selected == true)
                         circle.DrawEllipse(t = Pens.Black, x0new, y0new, diametrnew, diametrnew);
+
                     break;
                 case "wheeldown":
                     if (selected == true)
                         circle.DrawEllipse(t = Pens.Black, x0new, y0new, diametrnew, diametrnew);
                     break;
-            }            
+            }
         }
 
         /// <summary>
@@ -142,12 +143,13 @@ namespace MESH_network
         /// <param name="pos_y">Начальная точка отрисовки по оси OY (Левый верхний угол)</param>
         /// <param name="value">переменная скейлинга радиуса и координат круга маршрутизации</param>
         /// <param name="diametr_trusmitter">диаметр круга маршрутизации</param>
-        private void changedlocation(float pos_x,  float pos_y, int value,float diametr_trusmitter)
+        private void changedlocation(float pos_x, float pos_y, float diametr_trusmitter)
         {
-            x0new = pos_x - diametr - value;
-            y0new = pos_y - diametr - value;
-            diametrnew = diametr_trunsmitter + value * 2;
+            x0new = pos_x - diametr - (diametr_trunsmitter / 2 - diametr);
+            y0new = pos_y - diametr - (diametr_trunsmitter / 2 - diametr);
+            diametrnew = diametr_trusmitter;
         }
+
 
         /// <summary>
         /// Метод подсчета радиуса, площади и диаметра узла
@@ -167,7 +169,7 @@ namespace MESH_network
             pos_y = Convert.ToInt32(s1);
             diametrnew = Convert.ToInt32(s2);
             radius = Convert.ToInt32(s3);
-            id = new Guid (s4);
+            id = s4;
             name = s5;
             description = s6;
             location = s7;            
