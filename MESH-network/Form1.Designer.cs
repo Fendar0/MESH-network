@@ -102,9 +102,9 @@
             // bt_save
             // 
             this.bt_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_save.Location = new System.Drawing.Point(185, 291);
+            this.bt_save.Location = new System.Drawing.Point(167, 81);
             this.bt_save.Name = "bt_save";
-            this.bt_save.Size = new System.Drawing.Size(161, 34);
+            this.bt_save.Size = new System.Drawing.Size(151, 34);
             this.bt_save.TabIndex = 7;
             this.bt_save.Text = "Local save map";
             this.bt_save.UseVisualStyleBackColor = true;
@@ -113,9 +113,9 @@
             // bt_load
             // 
             this.bt_load.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_load.Location = new System.Drawing.Point(185, 329);
+            this.bt_load.Location = new System.Drawing.Point(167, 119);
             this.bt_load.Name = "bt_load";
-            this.bt_load.Size = new System.Drawing.Size(161, 34);
+            this.bt_load.Size = new System.Drawing.Size(151, 34);
             this.bt_load.TabIndex = 8;
             this.bt_load.Text = "Local load map";
             this.bt_load.UseVisualStyleBackColor = true;
@@ -184,7 +184,7 @@
             // bt_connect
             // 
             this.bt_connect.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_connect.Location = new System.Drawing.Point(180, 480);
+            this.bt_connect.Location = new System.Drawing.Point(180, 442);
             this.bt_connect.Name = "bt_connect";
             this.bt_connect.Size = new System.Drawing.Size(163, 56);
             this.bt_connect.TabIndex = 15;
@@ -196,7 +196,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(14, 409);
+            this.label4.Location = new System.Drawing.Point(14, 371);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 24);
             this.label4.TabIndex = 16;
@@ -206,7 +206,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(14, 440);
+            this.label5.Location = new System.Drawing.Point(14, 402);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 24);
             this.label5.TabIndex = 17;
@@ -215,7 +215,7 @@
             // tb_login
             // 
             this.tb_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tb_login.Location = new System.Drawing.Point(103, 406);
+            this.tb_login.Location = new System.Drawing.Point(103, 368);
             this.tb_login.Name = "tb_login";
             this.tb_login.Size = new System.Drawing.Size(240, 29);
             this.tb_login.TabIndex = 18;
@@ -224,7 +224,7 @@
             // tb_pass
             // 
             this.tb_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tb_pass.Location = new System.Drawing.Point(103, 440);
+            this.tb_pass.Location = new System.Drawing.Point(103, 402);
             this.tb_pass.Name = "tb_pass";
             this.tb_pass.Size = new System.Drawing.Size(240, 29);
             this.tb_pass.TabIndex = 19;
@@ -234,7 +234,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.Location = new System.Drawing.Point(25, 479);
+            this.checkBox1.Location = new System.Drawing.Point(25, 441);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(127, 52);
             this.checkBox1.TabIndex = 20;
@@ -252,9 +252,9 @@
             // bt_rem_map
             // 
             this.bt_rem_map.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_rem_map.Location = new System.Drawing.Point(49, 160);
+            this.bt_rem_map.Location = new System.Drawing.Point(10, 160);
             this.bt_rem_map.Name = "bt_rem_map";
-            this.bt_rem_map.Size = new System.Drawing.Size(241, 34);
+            this.bt_rem_map.Size = new System.Drawing.Size(151, 34);
             this.bt_rem_map.TabIndex = 21;
             this.bt_rem_map.Text = "Remove map";
             this.bt_rem_map.UseVisualStyleBackColor = true;
@@ -263,9 +263,9 @@
             // bt_create
             // 
             this.bt_create.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_create.Location = new System.Drawing.Point(49, 81);
+            this.bt_create.Location = new System.Drawing.Point(10, 81);
             this.bt_create.Name = "bt_create";
-            this.bt_create.Size = new System.Drawing.Size(241, 34);
+            this.bt_create.Size = new System.Drawing.Size(151, 34);
             this.bt_create.TabIndex = 22;
             this.bt_create.Text = "Create map";
             this.bt_create.UseVisualStyleBackColor = true;
@@ -274,9 +274,9 @@
             // bt_rename
             // 
             this.bt_rename.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_rename.Location = new System.Drawing.Point(49, 121);
+            this.bt_rename.Location = new System.Drawing.Point(10, 121);
             this.bt_rename.Name = "bt_rename";
-            this.bt_rename.Size = new System.Drawing.Size(241, 34);
+            this.bt_rename.Size = new System.Drawing.Size(151, 34);
             this.bt_rename.TabIndex = 23;
             this.bt_rename.Text = "Rename map";
             this.bt_rename.UseVisualStyleBackColor = true;
@@ -301,7 +301,9 @@
             this.groupBox1.Controls.Add(this.bt_rename);
             this.groupBox1.Controls.Add(this.listBoxMap);
             this.groupBox1.Controls.Add(this.bt_rem_map);
+            this.groupBox1.Controls.Add(this.bt_save);
             this.groupBox1.Controls.Add(this.bt_create);
+            this.groupBox1.Controls.Add(this.bt_load);
             this.groupBox1.Location = new System.Drawing.Point(621, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(329, 418);
@@ -347,9 +349,7 @@
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.bt_add);
             this.groupBox2.Controls.Add(this.tb_pass);
-            this.groupBox2.Controls.Add(this.bt_save);
             this.groupBox2.Controls.Add(this.tb_login);
-            this.groupBox2.Controls.Add(this.bt_load);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.tb_name);
             this.groupBox2.Controls.Add(this.label4);
@@ -360,7 +360,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(956, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(352, 544);
+            this.groupBox2.Size = new System.Drawing.Size(352, 509);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Узлы";
@@ -368,7 +368,7 @@
             // bt_edit_node
             // 
             this.bt_edit_node.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_edit_node.Location = new System.Drawing.Point(15, 367);
+            this.bt_edit_node.Location = new System.Drawing.Point(185, 292);
             this.bt_edit_node.Name = "bt_edit_node";
             this.bt_edit_node.Size = new System.Drawing.Size(161, 34);
             this.bt_edit_node.TabIndex = 21;
@@ -386,7 +386,6 @@
             this.Controls.Add(this.Pictures);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.Pictures)).EndInit();
             this.groupBox1.ResumeLayout(false);

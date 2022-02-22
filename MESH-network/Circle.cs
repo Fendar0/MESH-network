@@ -10,8 +10,7 @@ using System.Windows.Forms;
 namespace MESH_network
 {
     internal class Circle
-    {
-        /*Guid id; */                               //id узла
+    {        
         public string id;
         public float radius;                    //радиус узла
         public float radius_squared;            //площадь узла
@@ -149,7 +148,6 @@ namespace MESH_network
             y0new = pos_y - diametr - (diametr_trunsmitter / 2 - diametr);
             diametrnew = diametr_trusmitter;
         }
-
 
         /// <summary>
         /// Метод подсчета радиуса, площади и диаметра узла

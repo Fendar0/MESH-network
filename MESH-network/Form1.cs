@@ -197,7 +197,6 @@ namespace MESH_network
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
 
-
             using (StreamReader sr = new StreamReader(openFileDialog1.FileName))
             {               
                 foreach (string line in File.ReadAllLines(openFileDialog1.FileName).Skip(2))
@@ -381,21 +380,16 @@ namespace MESH_network
                         Pictures.Invalidate();
                     }
                 }
-                else if(res.Contains("alter-node-fail"))
-                    MessageBox.Show("Schema does not exist, there is no access to the schema, or there is no node with the specified ID");
+                //else if(res.Contains("alter-node-fail"))
+                    //MessageBox.Show("Schema does not exist, there is no access to the schema, or there is no node with the specified ID");
             }
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            send("ping");
+            send("ping");            
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-                      
-        }
-
+               
         private void bt_create_Click(object sender, EventArgs e)
         {            
             send($"create-net {tb_name_map.Text}");
@@ -477,6 +471,7 @@ namespace MESH_network
                 if (lst[i].selected == true)
                 {
                     lst.RemoveAt(i);
+                    Program.circle.Sizearray(lst);
                     send($"remov-node {s} {i}");
                 }
                 i++;
